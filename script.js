@@ -20,7 +20,6 @@ function writePassword() {
 }
 
 function generatePassword() {
-  var output = "";
   pwPool = "";
   var pwLength = parseInt(prompt("How many characters would you like in your password? Please choose between 8 and 128)."))
   var pwLowercase = confirm("Click ok if you would like lower case characters in your password?")
@@ -33,26 +32,26 @@ function generatePassword() {
      var pwPool = "abcdefghijklmnopqrstuvwxyz" + pwPool; //How can I use lowercase var here instead of manaully adding the data? 
 
   } if (pwUppercase) {
-    var pwPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + pwPool;
+     var pwPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + pwPool;
    
   } if (pwNumeric) {
-    var pwPool = "123456789" + pwPool;
+     var pwPool = "123456789" + pwPool;
 
   } if (pwSpecial) {
-    var pwPool = "!@#$%^&*" + pwPool;
+     var pwPool = "!@#$%^&*" + pwPool;
    
   /*
   } else {
     "Please choose at least one option." How do I make this loop back to the beginning if they hit cancel on all options? 
   }*/
-
-  for (var i = 0; i < pwLength; i++) {
-    console.log(pwPool[Math.floor(Math.random() * (pwPool.length - 0) + 0)]);
+  var output = "";
+  for (var i = 0; i < pwLength; i++) { 
+    output += (pwPool[Math.floor(Math.random() * (pwPool.length - 0) + 0)]);
     
-  }
-
-  return output; //how do I set output to be the output of the random number generator? 
-
+  } //this is not stopping at 128; user can put in as high of a number as they want
+  
+  return output; 
+  
   }
 }
 
