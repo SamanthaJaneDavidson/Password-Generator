@@ -30,24 +30,31 @@ function generatePassword() {
 
 
   if (pwLowercase) {
-    console.log //how do I tell pwPool to include lowercase? 
+     var pwPool = "abcdefghijklmnopqrstuvwxyz" + pwPool; //How can I use lowercase var here instead of manaully adding the data? 
+
   } if (pwUppercase) {
-    console.log
+    var pwPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + pwPool;
+   
   } if (pwNumeric) {
-    console.log
+    var pwPool = "123456789" + pwPool;
+
   } if (pwSpecial) {
-    console.log 
-  } else //error must choose one? 
+    var pwPool = "!@#$%^&*" + pwPool;
+   
+  /*
+  } else {
+    "Please choose at least one option." How do I make this loop back to the beginning if they hit cancel on all options? 
+  }*/
 
   for (var i = 0; i < pwLength; i++) {
-  console.log(pwPool[Math.floor(Math.random() * (pwPool.length - 0) + 0)]); 
+    console.log(pwPool[Math.floor(Math.random() * (pwPool.length - 0) + 0)]);
+    
+  }
 
+  return output; //how do I set output to be the output of the random number generator? 
+
+  }
 }
-
-  return output;
-}
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
