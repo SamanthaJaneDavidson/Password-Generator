@@ -28,8 +28,9 @@ function generatePassword() {
   var pwSpecial = confirm("Click ok if you would like special characters in your pasword?")
 
 
+  //How can I use the variable names here instead of manaully adding the values? 
   if (pwLowercase) {
-     var pwPool = "abcdefghijklmnopqrstuvwxyz" + pwPool; //How can I use lowercase var here instead of manaully adding the data? 
+     var pwPool = "abcdefghijklmnopqrstuvwxyz" + pwPool;
 
   } if (pwUppercase) {
      var pwPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + pwPool;
@@ -39,21 +40,23 @@ function generatePassword() {
 
   } if (pwSpecial) {
      var pwPool = "!@#$%^&*" + pwPool;
-   
-  /*
-  } else {
-    "Please choose at least one option." How do I make this loop back to the beginning if they hit cancel on all options? 
-  }*/
-  var output = "";
-  for (var i = 0; i < pwLength; i++) { 
-    output += (pwPool[Math.floor(Math.random() * (pwPool.length - 0) + 0)]);
-    
+
+  }
+    while (!pwLowercase && !pwUppercase && !pwNumeric && !pwSpecial) {
+      invalidResp = alert("You must choose at least one character type.");
+      generatePassword() //never generates password just keeps asking the questions
+
+    }
+  
+  var output = ""; //I used to have this at the top of the function but it didn't work there. Why?
+    for (var i = 0; i < pwLength; i++) { 
+      output += (pwPool[Math.floor(Math.random() * (pwPool.length - 0) + 0)]);
+      
   } //this is not stopping at 128; user can put in as high of a number as they want
   
   return output; 
-  
+
   }
-}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
