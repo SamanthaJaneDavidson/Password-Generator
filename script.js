@@ -55,7 +55,7 @@ function generatePassword() {
   var output = ""; //I used to have this at the top of the function but it didn't work there. Why?
     for (var i = 0; i < pwLength; i++) { 
       output += (pwPool[Math.floor(Math.random() * (pwPool.length - 0) + 0)]);  
-    } //this is not stopping at 128; user can put in as high of a number as they want
+    } 
   
   return output; 
 
