@@ -6,7 +6,7 @@ The goal of this project was to was to create a random password generator. The p
 ## Site Image
 ![Password Generator Image](./images/.pw-generator-screenshot.png)
 
-To visit the site click [here](TBA). 
+To visit the site click [here](https://samanthajanedavidson.github.io/password-generator/). 
 
 ## License
 Please refer to the license in the repo. 
