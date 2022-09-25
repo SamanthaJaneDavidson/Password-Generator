@@ -21,29 +21,29 @@ function writePassword() {
 
 function generatePassword() {
   pwPool = "";
-    //How can I use the variable names here instead of manaully adding the values? 
+
   var pwLength = parseInt(prompt("How many characters would you like in your password? Please choose between 8 and 128)."))
     if (pwLength < 8 || pwLength > 128){
         alert("You must choose a number between 8 and 128");
         var pwLength = parseInt(prompt("How many characters would you like in your password? Please choose between 8 and 128)."))} 
 
-  var pwLowercase = confirm("Click ok if you would like lower case characters in your password?")
-    if (pwLowercase) {
-        var pwPool = "abcdefghijklmnopqrstuvwxyz" + pwPool;}
+  var pwLowerPrompt = confirm("Click ok if you would like lower case characters in your password?")
+    if (pwLowerPrompt) {
+        var pwPool = pwLowercase + pwPool;}
 
-  var pwUppercase = confirm("Click ok if you would like upper case characters in your password?")
-    if (pwUppercase) {
-        var pwPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + pwPool;}
+  var pwUpperPrompt = confirm("Click ok if you would like upper case characters in your password?")
+    if (pwUpperPrompt) {
+        var pwPool = pwUppercase + pwPool;}
 
-  var pwNumeric = confirm("Click ok if you would like numeric characters in your password?")
-    if (pwNumeric) {
-        var pwPool = "123456789" + pwPool;}
+  var pwNumericPrompt = confirm("Click ok if you would like numeric characters in your password?")
+    if (pwNumericPrompt) {
+        var pwPool = pwNumeric + pwPool;}
   
-  var pwSpecial = confirm("Click ok if you would like special characters in your pasword?")
-    if (pwSpecial) {
-        var pwPool = "!@#$%^&*" + pwPool;}
+  var pwSpecialPrompt = confirm("Click ok if you would like special characters in your pasword?")
+    if (pwSpecialPrompt) {
+        var pwPool = pwSpecial + pwPool;}
 
-    else if (!pwLowercase && !pwUppercase && !pwNumeric && !pwSpecial) {
+    if (!pwLowerPrompt && !pwUpperPrompt && !pwNumericPrompt && !pwSpecialPrompt) {
     alert("You must choose at least one character type.");
     return generatePassword()
   }
